@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#declaration-1">You must confirm the declaration</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <form method="post">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Declaration
+            </h1>
+          </legend>
+          <div id="waste-hint" class="govuk-body">
+            You need to tell us that you've been a good boy or girl and told us everything.
+          </div>
+
+          <p id="declaration-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> You must confirm the declaration
+          </p>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="declaration" name="declaration" type="checkbox" value="true">
+              <label class="govuk-label govuk-checkboxes__label" for="declaration">
+                I swear I've been really honest and haven't told you any fibs. Pinky promise.
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
